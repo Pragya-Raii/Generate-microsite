@@ -15,15 +15,13 @@
 - **Image-to-Website**: Upload UI mockups to generate frontend code automatically.
 - **Live Code Preview**: Edit and preview the website in real time using an in-browser code editor.
 - **Fullscreen Design View**: View uploaded designs in fullscreen before generating the layout.
-- **User Authentication**: Secure login and registration with JWT-based access and refresh tokens.
 
 ---
 
 ## 🛠 Tech Stack
 
 **Frontend**: React, Vite, Tailwind CSS  
-**Backend**: FastAPI, Python, SQLAlchemy, Pillow  
-**Database**: SQLite (dev), PostgreSQL (prod-ready)  
+**Backend**: FastAPI, Python  
 **AI Models**:  
 - `DeepSeek R1` from NVIDIA code generation 
 - `Qwen 2.5` for design layout handling
@@ -34,10 +32,7 @@
 
 ```
 /backend
-  ├── core
-  ├── db
   ├── routes
-  ├── schemas
   └── services
 
 /frontend
@@ -46,6 +41,16 @@
       ├── pages
       └── services
 ```
+
+---
+
+## 🚀 Deployment
+
+We support a split deployment strategy for best performance:
+- **Frontend**: Deploy to **Netlify**
+- **Backend**: Deploy to **Render** or **Railway**
+
+👉 **[Read the Full Deployment Guide](DEPLOYMENT_GUIDE.md)** for step-by-step instructions.
 
 ---
 
@@ -59,11 +64,12 @@ python -m venv venv
 # Activate environment
 # Windows:
 .
-env\Scripts ctivate
+env\Scripts\activate
 # macOS/Linux:
 source venv/bin/activate
 
 pip install -r requirements.txt
+# Create .env file with your NVIDIA_API_KEY
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
