@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+openai
+httpx
+PyJWT
+SQLAlchemy
+psycopg2-binary
+passlib
+bcrypt==3.2.0
+pillow
+python-multipart
+pymupdf
